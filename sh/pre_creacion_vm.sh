@@ -60,6 +60,7 @@ gcloud config set project $myfirstproject
 
 myserviceaccount=$(gcloud iam service-accounts list --format='value(EMAIL)' | head -1)
  
+  
 # instance-instalacion STANDARD creacion
 gcloud compute instances create instance-instalacion \
     --project="$myfirstproject" \
@@ -71,7 +72,7 @@ gcloud compute instances create instance-instalacion \
     --service-account="$myserviceaccount" \
     --scopes=https://www.googleapis.com/auth/cloud-platform \
     --tags=https-server,http-server \
-    --create-disk=auto-delete=yes,boot=yes,device-name=instance-instalacion,image=projects/ubuntu-os-cloud/global/images/ubuntu-minimal-2504-plucky-amd64-v20250624,mode=rw,size=64,type=pd-balanced \
+    --create-disk=auto-delete=yes,boot=yes,device-name=instance-instalacion,image=projects/ubuntu-os-cloud/global/images/ubuntu-minimal-2504-plucky-amd64-v20250815,mode=rw,size=64,type=pd-balanced \
     --no-shielded-secure-boot \
     --shielded-vtpm \
     --shielded-integrity-monitoring \
